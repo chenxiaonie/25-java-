@@ -1,0 +1,76 @@
+来自知乎java爱好者
+出处:https://zhuanlan.zhihu.com/p/59049662
+
+//1.将一个正整数分解质因数,例如输入90,输出:2 3 3 5
+    public static void main(String[] args) {
+        Scanner input=new Scanner(System.in);
+        int n=input.nextInt();
+        int k=2;
+        while(n>=k) {
+            if(n==k) {
+                System.out.println(k);
+                break;
+            }else if (n%k==0) {
+                System.out.println(k);
+                n=n/k;
+            }else {
+                k++;
+            }
+        }
+    }
+    
+    
+    2.题目：古典问题：有一对兔子，从出生后第3个月起每个月都生一对兔子，
+//    小兔子长到第三个月后每个月又生一对兔子，假如兔子都不死，问每个月
+//    的兔子总数为多少？ //这是一个菲波拉契数列问题
+    public static void main(String[] args) {
+        int f1=1;//
+        int f2=1;//
+        int f;//
+        int M=15;
+        System.out.println(1);
+        System.out.println(2);
+        for(int i=3;i<M;i++) {//从第三个月起开始有兔宝宝
+            f=f2;//2
+            f2=f1+f2;//3
+            f1=f;//2
+            System.out.println( "第"+i+"个月"+f2);
+        }
+         // 题目：打印出所有的 "水仙花数 "，所谓 "水仙花数 "是指一个三位数，其各位数字立方和等于该数本身。例如：153是一个 "水仙花数 "，因为153=1的三次方＋5的三次方＋3的三次方。
+
+
+        public class test03 {
+          public static void main(String[] args) {
+            int a,b,c;
+            for(int i=101;i<1000;i++) {
+            a=i%10;
+            b=i/10%10;
+            c=i/100;
+            if(a*a*a+b*b*b+c*c*c==i)
+            System.out.println(i);
+            }
+          }
+        }
+       
+   题目：判断101-200之间有多少个素数，并输出所有素数。 程序分析：判断素数的方法：用一个数分别去除2到sqrt(这个数)，如果能被整除， 则表明此数不是素数，反之是素数。
+
+
+public class test02 {
+public static void main(String[] args) {
+int count=0;
+for(int i=101;i<200;i+=2) {
+boolean flag=true;
+for(int j=2;j<=Math.sqrt(i);j++) {
+if(i%j==0) {
+flag=false;
+break;
+}
+}
+if(flag==true) {
+count++;
+System.out.println(i);
+}
+}
+System.out.println(count);
+}
+}
